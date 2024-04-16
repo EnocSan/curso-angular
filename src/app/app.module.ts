@@ -1,16 +1,26 @@
+//? 1. Primero se importan lo que es propio de Angular
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+//? 2. Segundo se importan modulos de terceros
+import { ContadorModule } from './contador/contador.module';
+import { HeroesModule } from './heroes/heroes.module';
+//? 3. Por último se importa nuestro propio coódigo
 import { AppComponent } from './app.component';
+
+
+//! Los 3 comentarios son recomendaciones (no son obligatorios), pero por una codificación limpia es necesaria.
+//** Para evitar muchas importaciones de componentes, se realizan importaciones de "Módulos" */
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
+  //* Los módulos siempre se importan aquí **
   imports: [
     BrowserModule,
-    AppRoutingModule
+    ContadorModule,
+    HeroesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,18 @@
+<h3>Listado de héroes</h3>
+
+<div *ngIf="borrarHeroe; else sinBorrar"> <!--* El nombre colocado en el div después del else, hace referencia a algún elemento dentro de todo el template del html-->
+  <h3>Héroe borrado: <small class="text-danger"><strong>{{ borrarHeroe }} </strong></small></h3>
+
+</div>
+
+<ng-template #sinBorrar> <!--* El # se usa para jalar el nombre referenciado al nombre colocado y que se necesita en cierto proceso del template-->
+  <h3>No ha borrado nada.</h3>
+</ng-template>
+
+<button *ngIf="nombreHeroes.length > 0" (click)="eliminarUltimoHeroe()" class="btn btn-outline-danger">Borrar último héroe</button>
+
+
+<ul class="mt-2 list-group">
+  <li *ngFor="let nombre of nombreHeroes" class="list-group-item"><strong>{{nombre}}</strong></li>
+
+</ul>
