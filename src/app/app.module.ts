@@ -5,7 +5,9 @@ import { BrowserModule } from '@angular/platform-browser';
 //? 2. Segundo se importan modulos de terceros
 import { ContadorModule } from './contador/contador.module';
 import { HeroesModule } from './heroes/heroes.module';
-//? 3. Por último se importa nuestro propio coódigo
+import { DbzModule } from './dbz/dbz.module';
+
+//? 3. Por último se importa nuestro propio código
 import { AppComponent } from './app.component';
 
 
@@ -21,6 +23,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     ContadorModule,
     HeroesModule,
+    DbzModule
   ],
   providers: [],
   bootstrap: [AppComponent]

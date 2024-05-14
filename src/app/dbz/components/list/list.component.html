@@ -1,0 +1,44 @@
+<h4>Listado</h4>
+<ul class="list-group">
+  <!--* Para mostrar elementos de forma ordenada y expandir el *ngFor, se utiliza el siguiente código despues del ;-->
+  <li *ngFor="let caracter of caracterList;
+    let i = index;
+    let isFirst = first;
+    let isLast = last;
+    let isEven = even;
+    let isOdd = odd;"
+    class="list-group-item d-flex justify-content-between align-items-center"
+    [ngClass]="{
+      'list-group-item-primary': isFirst,
+      'list-group-item-info': isLast
+    }">
+
+    <div>
+      <!-- <span class="text-primary">{{ i + 1  }}. </span> -->
+      <span class="text-primary"> {{ i + 1 }} </span>
+      <span> {{ caracter.name }} - </span>
+      <strong> Power: {{ caracter.power }}</strong>
+    </div>
+
+    <!--*El evento  (click)="onDeleteCaracter(i)", queda eliminado porque no se usará-->
+    <button (click)="deleteCaracterById(caracter.id)" class="btn btn-outline-danger" >
+      <i class="bi bi-ban align-items-left"></i>
+    </button>
+
+
+    <!--* Condicion par e impar, primero y ultimo. -->
+    <!-- <span> Es el primero: {{ i === 0 }}, </span> -->
+    <!-- <span> Es el último: {{ i === caracterList.length - 1 }} </span> -->
+    <!-- * Directiva estructural dentro de un ngFor -->
+    <!--  <span> Es el primero: {{ isFirst }}, </span> -->
+    <!-- <span> Es el último: {{ isLast }} </span> -->
+    <!-- <span> Es numero par: {{ (i + 1)/2 == 1 }} </span>  -->
+    <!-- <span> Es numero impar: {{ (i+1)/2 != 1 }} </span> -->
+
+    <!--! Añadir Clases basados en condiciones con ngClass -->
+    <!--? Cuando se agrega [] en una clase o atributo HTML, se le indica a Angular que tome el control y lo asigne automáticamente-->
+    <!--* [ngClass]="{cssClass: expression}" -->
+
+
+  </li>
+</ul>

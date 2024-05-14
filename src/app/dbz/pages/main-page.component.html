@@ -1,0 +1,17 @@
+<div align="center">
+  <h1>DBZ Personajes</h1>
+  <br>
+  <hr>
+</div>
+
+<div class="row">
+  <div class="col">
+    <!--* De esta manera quitanto app, se da cuenta el componmente pertenece al modulo dbz-->
+    <dbz-list [caracterList]="caracters" (deleteId)="onDeleteCaracter($event)"></dbz-list>
+    <!--* El evento (onDelete) llama al método "onDeleteIn($event)", donde se solicita llamar a un evento llamado onDelete creado en la clase.-->
+  </div>
+
+  <div class="col">
+    <dbz-add-character (onNewCaracter)="nuevoCaracter($event)"></dbz-add-character>
+  </div>
+</div>

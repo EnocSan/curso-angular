@@ -1,0 +1,25 @@
+<h4>Agregar personaje</h4>
+    <form class="row" (ngSubmit)="emitCaracter()">
+
+      <input class="form-control mb-2"
+      type="text" [(ngModel)]="caracter.name"
+      name="name"
+      autocomplete="given-name"
+      placeholder="Nombre">
+      <!--? La sintaxis "caja de banana" [()], es utilizado con la finalidad de asociar un atributo [] y un evento () al mismo tiempo, conociddo como el two way data binding-->
+      <!--* ngModel se usa para poder hacer la insercion de datos desde el formulario hacia la clase-->
+
+      <input class="form-control mb-2"
+      type="number" [(ngModel)]="caracter.power"
+      name="power"
+      autocomplete="given-number"
+      placeholder="Poder">
+
+      <button class="btn btn-success mt-2" type="submit" > <!--(click)="emitCaracter()"--><!--* el evento click no se debe usar en el boton ya que no se coloca ahí-->
+        Agregar
+      </button>
+
+      <!--* <pre>{{ caracter | json }}</pre> -->
+      <!--? El caracter de "tubería" | se le conoce como pipe-->
+
+    </form>
