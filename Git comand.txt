@@ -1,0 +1,13 @@
+Comando para sincronizar GitLab y GitHub:
+=> GitLab
+1. git init
+2. git remote add "origin"/"origin2" git@gitlab.com:<url del repositorio>
+3. git add .
+4. git commit -m "mensaje"
+5. git push -u origin "main"/"master"
+
+=> GitHub
+1. git remote add "origin2" git@github.com:<url del repositorio>
+2. git push -u origin2 "main"/"master"
+
+
